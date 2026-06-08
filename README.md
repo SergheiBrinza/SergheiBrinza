@@ -1,14 +1,61 @@
 # Serghei Brinza
 
-AI engineer based in Vienna. I build scientific instruments where the sensor, the firmware, the signal pipeline, and the model all live in the same project.
+**Quantum + AI · intelligent instruments, LLM fine-tuning, quantum-classical hybrids**
+
+Physics and NMR background, sixteen years teaching quantum mechanics, now building
+scientific instruments where the sensor, the firmware, the signal pipeline, and the
+model live in one project — and, lately, small quantum subroutines that sit behind
+stable classical interfaces in an LLM stack.
+
+## Quantum Co-Processor program
+
+Three open research projects asking where a small quantum routine can do real work
+inside an LLM pipeline. Each ships a tested library, a live demo Space, and honest
+benchmarks. These are research prototypes on quantum simulators (QVerify also runs
+on real IBM hardware); **no quantum advantage is claimed** — the goal is working,
+honestly measured quantum subroutines behind classical interfaces.
+
+### QVerify — Grover verification on real IBM quantum hardware
+
+Translates each LLM reasoning step to propositional CNF, grounds it over a finite
+universe, and checks logical consistency with Grover's algorithm — on a CPU
+simulator or IBM's 156-qubit Heron r2 processor.
+
+[![GitHub](https://img.shields.io/badge/GitHub-Quantum--Labor%2Fqverify-181717?logo=github)](https://github.com/Quantum-Labor/qverify)
+[![Live Space](https://img.shields.io/badge/Live%20Space-Laborator%2Fqverify-FFD21E?logo=huggingface&logoColor=000)](https://huggingface.co/spaces/Laborator/qverify)
+
+`v1.0.1` · 485 tests · 14 verified IBM Heron r2 hardware runs.
+
+### QAgent — QAOA tool selection for LLM agents
+
+Picks the best subset of *k* tools from *N* with the Quantum Approximate
+Optimization Algorithm, accounting for the tool-pair interactions a greedy ranking
+ignores.
+
+[![GitHub](https://img.shields.io/badge/GitHub-Quantum--Labor%2Fqagent-181717?logo=github)](https://github.com/Quantum-Labor/qagent)
+[![Live Space](https://img.shields.io/badge/Live%20Space-Laborator%2Fqagent-FFD21E?logo=huggingface&logoColor=000)](https://huggingface.co/spaces/Laborator/qagent)
+
+`v0.2` · approximation ratio 0.915 at N=16 (vs greedy 0.735).
+
+### QRoute — VQC mixture-of-experts router for Gemma 4
+
+A variational quantum circuit that routes tokens to experts in a Mixture-of-Experts
+layer: *n* qubits give 2^n basis states, one per expert, so a tiny circuit scores an
+exponential number of experts.
+
+[![GitHub](https://img.shields.io/badge/GitHub-Quantum--Labor%2Fqroute-181717?logo=github)](https://github.com/Quantum-Labor/qroute)
+[![Live Space](https://img.shields.io/badge/Live%20Space-Laborator%2Fqroute-FFD21E?logo=huggingface&logoColor=000)](https://huggingface.co/spaces/Laborator/qroute)
+
+Phase 1 prototype (toy MoE) plus a full-scale 128-expert / 7-qubit design.
 
 ## What I work on
 
-Hardware-aware AI. I'm most useful when a problem needs someone who can design a PCB, flash a microcontroller, tune a neural network, and ship the whole thing as a product. Some of that in each project.
-
-Current focus areas:
+Hardware-aware AI. I'm most useful when a problem needs someone who can design a
+PCB, flash a microcontroller, tune a neural network, and ship the whole thing as a
+product. Current focus areas:
 
 - Scientific instrumentation with integrated AI (microscopy, radio astronomy, sensor arrays)
+- Quantum-classical hybrids: small quantum subroutines inside LLM pipelines
 - Multi-GPU inference infrastructure for local LLM stacks
 - Computer vision for biological and medical signals
 - Language model efficiency (quantization, parameter-constrained training)
@@ -37,10 +84,13 @@ Current focus areas:
 
 ## Stack
 
-Python, C, C++, Rust when needed, TypeScript for UI, FastAPI and Flask for backends, React for frontends, PyTorch and ONNX for models, Docker for deployment, Linux everywhere.
+Python, C, C++, Rust when needed, TypeScript for UI, FastAPI and Flask for backends,
+React for frontends, PyTorch and ONNX for models, Docker for deployment, Linux
+everywhere. For the quantum work: PennyLane, Qiskit, IBM Quantum, Gradio, Hugging
+Face, and GitHub Actions for CI and auto-deploy.
 
-Hardware side: KiCad for PCBs, STM32 and ESP32 for MCUs, standard bench instrumentation, CNC when needed.
+## Links
 
-## Contact
-
-Open an issue on any of my repositories or reach out through the email on my GitHub profile.
+- GitHub organization for the quantum work: [Quantum-Labor](https://github.com/Quantum-Labor)
+- Hugging Face: [Laborator](https://huggingface.co/Laborator)
+- This profile: [github.com/SergheiBrinza](https://github.com/SergheiBrinza)
